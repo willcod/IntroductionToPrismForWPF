@@ -4,6 +4,7 @@ using Prism.Ioc;
 using System.Windows;
 using System.Windows.Controls;
 using IntroductionToPrismForWPF.Core;
+using Prism.Modularity;
 using Prism.Regions;
 
 namespace IntroductionToPrismForWPF
@@ -24,6 +25,22 @@ namespace IntroductionToPrismForWPF
         {
             base.ConfigureRegionAdapterMappings(regionAdapterMappings);
             regionAdapterMappings.RegisterMapping(typeof(StackPanel), Container.Resolve<StackPanelRegionAdapter>());
+        }
+
+        //protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)
+        //{
+        //    base.ConfigureModuleCatalog(moduleCatalog);
+        //    moduleCatalog.AddModule<MainModule.MainModule>();
+        //}
+
+        //protected override IModuleCatalog CreateModuleCatalog()
+        //{
+        //    return new DirectoryModuleCatalog() {ModulePath = @".\Modules"};
+        //}
+
+        protected override IModuleCatalog CreateModuleCatalog()
+        {
+            return new ConfigurationModuleCatalog();
         }
     }
 }
