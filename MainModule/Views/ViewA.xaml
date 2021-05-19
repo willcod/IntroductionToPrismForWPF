@@ -9,6 +9,10 @@
              prism:ViewModelLocator.AutoWireViewModel="True"
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-    <TextBlock Text="{Binding Title}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="45"></TextBlock>
+      <StackPanel>
+        <CheckBox Content="Can Execute" IsChecked="{Binding CanExecute}"></CheckBox>
+        <Button Command="{Binding ClickCommand}" Height="50">Click me</Button>
+        <TextBlock Text="{Binding Title}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="45"></TextBlock>
+      </StackPanel>
   </Grid>
 </UserControl>

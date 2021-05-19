@@ -36,7 +36,7 @@ namespace MainModule
 
         public void OnInitialized(IContainerProvider containerProvider)
         {
-            _regionManager.RegisterViewWithRegion("MainRegion", typeof(ControlA));
+            _regionManager.RegisterViewWithRegion("MainRegion", typeof(ViewA));
         }
     }
 }
