@@ -3,10 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:prism="http://prismlibrary.com/"
              xmlns:local="clr-namespace:MainModule.Views"
              mc:Ignorable="d" 
+             prism:ViewModelLocator.AutoWireViewModel="True"
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-    <TextBlock Text="Hello Prism From ViewA" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="45"></TextBlock>
+    <TextBlock Text="{Binding Title}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="45"></TextBlock>
   </Grid>
 </UserControl>

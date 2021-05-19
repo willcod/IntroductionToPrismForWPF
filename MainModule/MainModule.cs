@@ -30,17 +30,17 @@ namespace MainModule
             var view = containerProvider.Resolve<ViewA>();
             region.Add(view);
 
-            var anotherView = containerProvider.Resolve<ViewA>();
-            anotherView.Content = new TextBlock()
-            {
-                Text = "Hello from another View",
-                HorizontalAlignment = HorizontalAlignment.Center,
-                VerticalAlignment = VerticalAlignment.Center,
-                FontSize = 48
-            };
+            //var anotherView = containerProvider.Resolve<ViewA>();
+            //anotherView.Content = new TextBlock()
+            //{
+            //    Text = "Hello from another View",
+            //    HorizontalAlignment = HorizontalAlignment.Center,
+            //    VerticalAlignment = VerticalAlignment.Center,
+            //    FontSize = 48
+            //};
 
-            region.Add(anotherView);
-            region.Remove(view);
+            //region.Add(anotherView);
+            //region.Remove(view);
         }
     }
 }
