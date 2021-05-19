@@ -26,7 +26,6 @@ namespace MainModule.ViewModels
             set
             {
                 SetProperty(ref _canExecute, value); 
-                ClickCommand.RaiseCanExecuteChanged();
             }
         }
 
@@ -35,7 +34,7 @@ namespace MainModule.ViewModels
         public ViewAViewModel()
         {
             Title = "Hello from ViewAViewModel";
-            ClickCommand = new DelegateCommand(Click, CanClick);
+            ClickCommand = new DelegateCommand(Click, CanClick).ObservesProperty(()=>CanExecute);
         }
 
         private bool CanClick()
