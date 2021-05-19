@@ -8,7 +8,6 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-      <StackPanel prism:RegionManager.RegionName="MainRegion" ></StackPanel>
-      <TextBlock Text="Hello Prism" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="45"></TextBlock>
+      <StackPanel prism:RegionManager.RegionName="MainRegion" VerticalAlignment="Center" HorizontalAlignment="Center" ></StackPanel>
     </Grid>
 </Window>
