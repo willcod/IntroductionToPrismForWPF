@@ -48,14 +48,14 @@ namespace IntroductionToPrismForWPF
         protected override void ConfigureViewModelLocator()
         {
             base.ConfigureViewModelLocator();
-            ViewModelLocationProvider.SetDefaultViewTypeToViewModelTypeResolver((viewType) =>
-            {
-                var viewName = viewType.FullName;
-                var assemblyName = viewType.Assembly.FullName;
-                var vmName = $"{viewName.Replace("Controls", "ViewModels")}ViewModel, {assemblyName}";
+            //ViewModelLocationProvider.SetDefaultViewTypeToViewModelTypeResolver((viewType) =>
+            //{
+            //    var viewName = viewType.FullName;
+            //    var assemblyName = viewType.Assembly.FullName;
+            //    var vmName = $"{viewName.Replace("Controls", "ViewModels")}ViewModel, {assemblyName}";
 
-                return Type.GetType(vmName);
-            });
+            //    return Type.GetType(vmName);
+            //});
         }
     }
 }

@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Prism.Mvvm;
+﻿using Prism.Mvvm;
 
 namespace MainModule.ViewModels
 {
     public class ControlAViewModel : BindableBase
     {
-        public string Title => "hello from Control A";
+        public string Title {
+            set;
+            get;
+        }
     }
 }
