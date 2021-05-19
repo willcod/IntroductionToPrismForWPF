@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using Prism.Commands;
+﻿using Prism.Commands;
 using Prism.Mvvm;
 
 namespace MainModule.ViewModels
@@ -12,38 +6,29 @@ namespace MainModule.ViewModels
     public class ViewAViewModel : BindableBase
     {
         private string _title = "";
-        public string Title
-        {
+
+        public string Title {
             get { return _title; }
             set { SetProperty(ref _title, value); }
         }
 
         private bool _canExecute = false;
 
-        public bool CanExecute
-        {
+        public bool CanExecute {
             get { return _canExecute; }
-            set
-            {
-                SetProperty(ref _canExecute, value); 
+            set {
+                SetProperty(ref _canExecute, value);
             }
         }
 
-            public DelegateCommand ClickCommand { get; private set; }
+        public DelegateCommand ClickCommand { get; private set; }
 
-        public ViewAViewModel()
-        {
+        public ViewAViewModel() {
             Title = "Hello from ViewAViewModel";
-            ClickCommand = new DelegateCommand(Click, CanClick).ObservesProperty(()=>CanExecute);
+            ClickCommand = new DelegateCommand(Click).ObservesCanExecute(() => CanExecute);
         }
 
-        private bool CanClick()
-        {
-            return CanExecute;
-        }
-
-        private void Click()
-        {
+        private void Click() {
             Title = "Clicked me";
         }
     }
