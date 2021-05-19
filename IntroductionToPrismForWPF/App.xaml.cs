@@ -1,10 +1,12 @@
-﻿using IntroductionToPrismForWPF.Views;
+﻿using System;
+using IntroductionToPrismForWPF.Views;
 using Prism.DryIoc;
 using Prism.Ioc;
 using System.Windows;
 using System.Windows.Controls;
 using IntroductionToPrismForWPF.Core;
 using Prism.Modularity;
+using Prism.Mvvm;
 using Prism.Regions;
 
 namespace IntroductionToPrismForWPF
@@ -41,6 +43,19 @@ namespace IntroductionToPrismForWPF
         protected override IModuleCatalog CreateModuleCatalog()
         {
             return new ConfigurationModuleCatalog();
+        }
+
+        protected override void ConfigureViewModelLocator()
+        {
+            base.ConfigureViewModelLocator();
+            ViewModelLocationProvider.SetDefaultViewTypeToViewModelTypeResolver((viewType) =>
+            {
+                var viewName = viewType.FullName;
+                var assemblyName = viewType.Assembly.FullName;
+                var vmName = $"{viewName.Replace("Controls", "ViewModels")}ViewModel, {assemblyName}";
+
+                return Type.GetType(vmName);
+            });
         }
     }
 }
