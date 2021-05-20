@@ -5,6 +5,7 @@ using Prism.Ioc;
 using System.Windows;
 using System.Windows.Controls;
 using IntroductionToPrismForWPF.Core;
+using IntroductionToPrismForWPF.Dialogs;
 using Prism.Modularity;
 using Prism.Mvvm;
 using Prism.Regions;
@@ -17,6 +18,7 @@ namespace IntroductionToPrismForWPF
     public partial class App : PrismApplication
     {
         protected override void RegisterTypes(IContainerRegistry containerRegistry) {
+            containerRegistry.RegisterDialog<MessageDialog, MessageDialogViewModel>();
         }
 
         protected override Window CreateShell() {
@@ -32,6 +34,7 @@ namespace IntroductionToPrismForWPF
         protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog) {
             base.ConfigureModuleCatalog(moduleCatalog);
             moduleCatalog.AddModule<ForNaviModule.ForNaviModule>();
+            moduleCatalog.AddModule<CallDialogModule.CallDialogModule>();
         }
 
         //protected override IModuleCatalog CreateModuleCatalog()
