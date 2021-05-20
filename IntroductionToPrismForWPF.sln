@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntroductionToPrismForWPF.C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MsgListModule", "MsgListModule\MsgListModule.csproj", "{48D732AE-3D2C-4B37-A4D0-6F2AB8635841}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ForNaviModule", "ForNaviModule\ForNaviModule.csproj", "{1CD66398-EE9F-4449-9404-FFA6F62630E3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{48D732AE-3D2C-4B37-A4D0-6F2AB8635841}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{48D732AE-3D2C-4B37-A4D0-6F2AB8635841}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{48D732AE-3D2C-4B37-A4D0-6F2AB8635841}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CD66398-EE9F-4449-9404-FFA6F62630E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CD66398-EE9F-4449-9404-FFA6F62630E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CD66398-EE9F-4449-9404-FFA6F62630E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CD66398-EE9F-4449-9404-FFA6F62630E3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

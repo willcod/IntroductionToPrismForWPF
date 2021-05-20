@@ -4,19 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4CDA1B83-38E3-4521-BE14-06F3C366315B}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
-    <RootNamespace>IntroductionToPrismForWPF</RootNamespace>
-    <AssemblyName>IntroductionToPrismForWPF</AssemblyName>
+    <ProjectGuid>{1CD66398-EE9F-4449-9404-FFA6F62630E3}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <RootNamespace>ForNaviModule</RootNamespace>
+    <AssemblyName>ForNaviModule</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -26,7 +24,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -67,32 +64,7 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <ApplicationDefinition Include="App.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </ApplicationDefinition>
-    <Compile Include="Core\StackPanelRegionAdapter.cs" />
-    <Compile Include="ViewModels\NavigationViewModel.cs" />
-    <Compile Include="Views\MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="App.xaml.cs">
-      <DependentUpon>App.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Views\NavigationView.xaml.cs">
-      <DependentUpon>NavigationView.xaml</DependentUpon>
-    </Compile>
-    <Page Include="Views\MainWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\NavigationView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-  </ItemGroup>
-  <ItemGroup>
+    <Compile Include="ForNaviModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -106,6 +78,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Views\AView.xaml.cs">
+      <DependentUpon>AView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BView.xaml.cs">
+      <DependentUpon>BView.xaml</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -116,27 +94,16 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <ProjectReference Include="..\ForNaviModule\ForNaviModule.csproj">
-      <Project>{1CD66398-EE9F-4449-9404-FFA6F62630E3}</Project>
-      <Name>ForNaviModule</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MainModule\MainModule.csproj">
-      <Project>{9D5DACE7-5751-468C-9B2D-7200049E178D}</Project>
-      <Name>MainModule</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MsgInModule\MsgInModule.csproj">
-      <Project>{1D296509-2B79-4FD5-BFE2-787E819C66F1}</Project>
-      <Name>MsgInModule</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MsgListModule\MsgListModule.csproj">
-      <Project>{48D732AE-3D2C-4B37-A4D0-6F2AB8635841}</Project>
-      <Name>MsgListModule</Name>
-    </ProjectReference>
+    <Page Include="Views\AView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\BView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

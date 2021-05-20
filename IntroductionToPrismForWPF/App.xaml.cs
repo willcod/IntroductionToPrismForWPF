@@ -20,7 +20,7 @@ namespace IntroductionToPrismForWPF
         }
 
         protected override Window CreateShell() {
-            return Container.Resolve<MainWindow>();
+            return Container.Resolve<NavigationView>();
         }
 
         protected override void ConfigureRegionAdapterMappings(RegionAdapterMappings regionAdapterMappings)
@@ -31,8 +31,7 @@ namespace IntroductionToPrismForWPF
 
         protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog) {
             base.ConfigureModuleCatalog(moduleCatalog);
-            moduleCatalog.AddModule<MsgInModule.MsgInModule>();
-            moduleCatalog.AddModule<MsgListModule.MsgListModule>();
+            moduleCatalog.AddModule<ForNaviModule.ForNaviModule>();
         }
 
         //protected override IModuleCatalog CreateModuleCatalog()
