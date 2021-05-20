@@ -8,7 +8,7 @@ using Prism.Regions;
 
 namespace ForNaviModule.ViewModels
 {
-    public class AViewModel : BindableBase, INavigationAware
+    public class AViewModel : BindableBase, INavigationAware, IConfirmNavigationRequest
     {
         private int _viewCount = 0;
 
@@ -41,6 +41,12 @@ namespace ForNaviModule.ViewModels
 
         public void OnNavigatedFrom(NavigationContext navigationContext)
         {
+        }
+
+        public void ConfirmNavigationRequest(NavigationContext navigationContext, Action<bool> continuationCallback)
+        {
+            var result = false;
+            continuationCallback(result);
         }
     }
 }
