@@ -16,21 +16,24 @@ namespace MsgListModule.ViewModels
         }
 
         private MessageSentEvent _evt;
+        private SubscriptionToken _token;
+
         public bool IsSubscribed {
             get { return _isSubscribed; }
             set {
                 SetProperty(ref _isSubscribed, value);
                 if (IsSubscribed) {
-                    _evt.Subscribe(MessageReceived);
+                    _token = _evt.Subscribe(MessageReceived);
                 }
                 else {
-                    _evt.Unsubscribe(MessageReceived);
+                    _evt.Unsubscribe(_token);
                 }
             }
         }
 
         public MessageListViewModel(IEventAggregator eventAggregator) {
             _evt = eventAggregator.GetEvent<MessageSentEvent>();
+            IsSubscribed = true;
         }
 
         private void MessageReceived(string msg) {
