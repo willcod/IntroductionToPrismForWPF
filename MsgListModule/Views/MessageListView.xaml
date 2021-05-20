@@ -8,6 +8,11 @@
              mc:Ignorable="d"
              d:DesignHeight="450" d:DesignWidth="800">
   <Grid>
-    <ListBox ItemsSource="{Binding Messages}" />
+    <Grid.RowDefinitions>
+      <RowDefinition Height="30"/>
+      <RowDefinition Height="*"/>
+    </Grid.RowDefinitions>
+    <CheckBox IsChecked="{Binding IsSubscribed}"  Content="Is Subscribed"></CheckBox>
+    <ListBox Grid.Row="1" ItemsSource="{Binding Messages}" />
   </Grid>
 </UserControl>
