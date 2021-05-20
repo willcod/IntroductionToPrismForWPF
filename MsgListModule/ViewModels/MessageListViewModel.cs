@@ -15,7 +15,7 @@ namespace MsgListModule.ViewModels
         }
 
         public MessageListViewModel(IEventAggregator eventAggregator) {
-            eventAggregator.GetEvent<MessageSentEvent>().Subscribe(MessageReceived);
+            eventAggregator.GetEvent<MessageSentEvent>().Subscribe(MessageReceived, ThreadOption.PublisherThread, false, p => p.Contains("hello"));
         }
 
         private void MessageReceived(string msg) {
