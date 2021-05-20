@@ -29,21 +29,21 @@ namespace IntroductionToPrismForWPF
             regionAdapterMappings.RegisterMapping(typeof(StackPanel), Container.Resolve<StackPanelRegionAdapter>());
         }
 
-        //protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)
-        //{
-        //    base.ConfigureModuleCatalog(moduleCatalog);
-        //    moduleCatalog.AddModule<MainModule.MainModule>();
-        //}
+        protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog) {
+            base.ConfigureModuleCatalog(moduleCatalog);
+            moduleCatalog.AddModule<MsgInModule.MsgInModule>();
+            moduleCatalog.AddModule<MsgListModule.MsgListModule>();
+        }
 
         //protected override IModuleCatalog CreateModuleCatalog()
         //{
         //    return new DirectoryModuleCatalog() {ModulePath = @".\Modules"};
         //}
 
-        protected override IModuleCatalog CreateModuleCatalog()
-        {
-            return new ConfigurationModuleCatalog();
-        }
+        //protected override IModuleCatalog CreateModuleCatalog()
+        //{
+        //    return new ConfigurationModuleCatalog();
+        //}
 
         protected override void ConfigureViewModelLocator()
         {

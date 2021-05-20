@@ -8,6 +8,11 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-      <StackPanel prism:RegionManager.RegionName="MainRegion" VerticalAlignment="Center" HorizontalAlignment="Center" ></StackPanel>
-    </Grid>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition/>
+        <ColumnDefinition/>
+      </Grid.ColumnDefinitions>
+      <ContentControl Grid.Column="0" prism:RegionManager.RegionName="MessageInRegion"></ContentControl>
+      <ContentControl Grid.Column="1" prism:RegionManager.RegionName="MessageListRegion"></ContentControl>
+  </Grid>
 </Window>

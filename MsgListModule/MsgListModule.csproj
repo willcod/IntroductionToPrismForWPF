@@ -4,19 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{4CDA1B83-38E3-4521-BE14-06F3C366315B}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
-    <RootNamespace>IntroductionToPrismForWPF</RootNamespace>
-    <AssemblyName>IntroductionToPrismForWPF</AssemblyName>
+    <ProjectGuid>{48D732AE-3D2C-4B37-A4D0-6F2AB8635841}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <RootNamespace>MsgListModule</RootNamespace>
+    <AssemblyName>MsgListModule</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -26,7 +24,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -67,22 +64,16 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <ApplicationDefinition Include="App.xaml">
+    <Page Include="Views\MessageListView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </ApplicationDefinition>
-    <Compile Include="Core\StackPanelRegionAdapter.cs" />
-    <Compile Include="Views\MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="App.xaml.cs">
-      <DependentUpon>App.xaml</DependentUpon>
+    </Page>
+    <Compile Include="MsgListModule.cs" />
+    <Compile Include="ViewModels\MessageListViewModel.cs" />
+    <Compile Include="Views\MessageListView.xaml.cs">
+      <DependentUpon>MessageListView.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Views\MainWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -108,24 +99,11 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ViewModels\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\MainModule\MainModule.csproj">
-      <Project>{9D5DACE7-5751-468C-9B2D-7200049E178D}</Project>
-      <Name>MainModule</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MsgInModule\MsgInModule.csproj">
-      <Project>{1D296509-2B79-4FD5-BFE2-787E819C66F1}</Project>
-      <Name>MsgInModule</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MsgListModule\MsgListModule.csproj">
-      <Project>{48D732AE-3D2C-4B37-A4D0-6F2AB8635841}</Project>
-      <Name>MsgListModule</Name>
+    <ProjectReference Include="..\IntroductionToPrismForWPF.Core\IntroductionToPrismForWPF.Core.csproj">
+      <Project>{c789f008-0f15-419c-a5e0-55845e169d26}</Project>
+      <Name>IntroductionToPrismForWPF.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
