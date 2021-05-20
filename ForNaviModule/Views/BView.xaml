@@ -3,9 +3,16 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:prism="http://prismlibrary.com/"
+             prism:ViewModelLocator.AutoWireViewModel="True"
              mc:Ignorable="d"
              d:DesignHeight="450" d:DesignWidth="800">
   <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition/>
+      <RowDefinition/>
+    </Grid.RowDefinitions>
     <TextBlock FontSize="48" HorizontalAlignment="Center" VerticalAlignment="Center">B View</TextBlock>
+    <TextBlock Grid.Row="1" Text="{Binding ViewCount}" FontSize="48" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
   </Grid>
 </UserControl>
